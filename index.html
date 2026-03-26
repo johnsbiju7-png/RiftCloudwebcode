@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiftCloud Development — Crystal PVP Experts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Crystal Particles Canvas -->
+    <canvas id="crystal-canvas"></canvas>
+    <div class="bg-overlay"></div>
+    
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="glass-nav">
+            <div class="logo">
+                <i class="fas fa-crystal"></i>
+                <span>RIFTCLOUD</span>
+                <span class="logo-badge">DEV TEAM</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#showcase" class="nav-link">Showcase</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#orders" class="nav-link" id="ordersLink" style="display: none;">My Orders</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="https://discord.gg/rCzR5X9KR6" class="discord-btn" target="_blank">
+                    <i class="fab fa-discord"></i> Main Server
+                </a>
+                <a href="https://discord.gg/aJqmD3AmYa" class="order-btn" target="_blank">
+                    <i class="fas fa-shopping-cart"></i> Order Now
+                </a>
+                <button class="staff-btn" id="staffLoginBtn">
+                    <i class="fas fa-user-shield"></i> Staff
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="crystal-badge">
+                    <i class="fas fa-gem"></i> CRYSTAL PVP EXPERTS
+                </div>
+                <h1 class="glow-text">
+                    <span class="rift-text">RIFTCLOUD</span>
+                    <span class="dev-text">Development Team</span>
+                </h1>
+                <p class="hero-desc">Premium Minecraft Crystal PVP Servers • Custom Plugins • Website Development</p>
+                <div class="hero-buttons">
+                    <a href="https://discord.gg/rCzR5X9KR6" class="primary-btn" target="_blank">
+                        <i class="fab fa-discord"></i> Join Our Community
+                    </a>
+                    <a href="https://discord.gg/aJqmD3AmYa" class="secondary-btn" target="_blank">
+                        <i class="fas fa-rocket"></i> Order Services
+                    </a>
+                </div>
+                <div class="stats-badge">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Servers Created</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Crystal Plugins</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10k+</span>
+                        <span class="stat-label">Happy Players</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-crystal">
+                <div class="floating-crystal">
+                    <i class="fas fa-crystal"></i>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section class="services-section" id="services">
+            <h2 class="section-title">
+                <i class="fas fa-bolt"></i>
+                What We Build
+                <i class="fas fa-bolt"></i>
+            </h2>
+            <div class="services-grid">
+                <div class="service-card crystal-card" data-service="Crystal PVP Server" data-price="29.99">
+                    <div class="card-icon">
+                        <i class="fas fa-crystal"></i>
+                    </div>
+                    <h3>Crystal PVP Servers</h3>
+                    <p>Fully optimized Minecraft servers with custom crystal PVP mechanics, anti-cheat, and tournament systems.</p>
+                    <div class="price-tag">₹29.99</div>
+                    <button class="buy-btn" onclick="openPayment('Crystal PVP Server', 29.99)">Buy Now</button>
+                </div>
+                <div class="service-card crystal-card" data-service="Custom Plugin" data-price="9.99">
+                    <div class="card-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Custom Plugins</h3>
+                    <p>Tailor-made Minecraft plugins for crystal PVP, factions, kits, and unique gameplay features.</p>
+                    <div class="price-tag">₹9.99</div>
+                    <button class="buy-btn" onclick="openPayment('Custom Plugin', 9.99)">Buy Now</button>
+                </div>
+                <div class="service-card crystal-card" data-service="Discord Bot" data-price="4.99">
+                    <div class="card-icon">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <h3>Discord Bots</h3>
+                    <p>Powerful Discord bots for server management, ticket systems, and community engagement.</p>
+                    <div class="price-tag">₹4.99</div>
+                    <button class="buy-btn" onclick="openPayment('Discord Bot', 4.99)">Buy Now</button>
+                </div>
+                <div class="service-card crystal-card" data-service="Custom Website" data-price="49.99">
+                    <div class="card-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Custom Websites</h3>
+                    <p>Stunning websites for your Minecraft server with buycraft integration and player stats.</p>
+                    <div class="price-tag">₹49.99</div>
+                    <button class="buy-btn" onclick="openPayment('Custom Website', 49.99)">Buy Now</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pricing Section -->
+        <section class="pricing-section" id="pricing">
+            <h2 class="section-title">
+                <i class="fas fa-tag"></i>
+                Crystal Packages
+                <i class="fas fa-tag"></i>
+            </h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Crystal Basic</h3>
+                        <div class="price">₹4.99<span>/month</span></div>
+                    </div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Basic Crystal PVP Plugin</li>
+                        <li><i class="fas fa-check"></i> Discord Support</li>
+                        <li><i class="fas fa-check"></i> 1 Custom Crystal</li>
+                    </ul>
+                    <button class="pricing-btn" onclick="openPayment('Crystal Basic', 4.99)">Order Now</button>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="popular-badge">POPULAR</div>
+                    <div class="pricing-header">
+                        <h3>Crystal Pro</h3>
+                        <div class="price">₹29.99<span>/one-time</span></div>
+                    </div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Full Crystal PVP Server Setup</li>
+                        <li><i class="fas fa-check"></i> Custom Plugins (3 included)</li>
+                        <li><i class="fas fa-check"></i> Website Integration</li>
+                        <li><i class="fas fa-check"></i> 24/7 Priority Support</li>
+                    </ul>
+                    <button class="pricing-btn" onclick="openPayment('Crystal Pro', 29.99)">Order Now</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Crystal Ultimate</h3>
+                        <div class="price">₹99<span>/one-time</span></div>
+                    </div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Full Custom Minecraft Server</li>
+                        <li><i class="fas fa-check"></i> Custom Website + Discord Bot</li>
+                        <li><i class="fas fa-check"></i> Unlimited Custom Plugins</li>
+                        <li><i class="fas fa-check"></i> Lifetime Updates + Support</li>
+                    </ul>
+                    <button class="pricing-btn" onclick="openPayment('Crystal Ultimate', 99)">Order Now</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Discord CTA -->
+        <section class="discord-cta">
+            <div class="cta-content">
+                <i class="fab fa-discord"></i>
+                <h3>Ready to Dominate Crystal PVP?</h3>
+                <p>Join our Discord community and get your custom server today!</p>
+                <div class="cta-links">
+                    <a href="https://discord.gg/rCzR5X9KR6" class="discord-main" target="_blank">
+                        <i class="fab fa-discord"></i> Main Server
+                    </a>
+                    <a href="https://discord.gg/aJqmD3AmYa" class="discord-order" target="_blank">
+                        <i class="fas fa-shopping-cart"></i> Order Services
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-crystal"></i>
+                    <span>RIFTCLOUD</span>
+                    <small>Development Team</small>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#showcase">Showcase</a>
+                    <a href="#pricing">Pricing</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://discord.gg/rCzR5X9KR6" target="_blank"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 RiftCloud Development Team — Crystal PVP Experts | UPI: johnsbiju@fam</p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- UPI Payment Modal -->
+    <div id="upiModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-phone-alt"></i> Pay with UPI</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="payment-details">
+                    <p><strong>Service:</strong> <span id="modalService">-</span></p>
+                    <p><strong>Amount:</strong> ₹<span id="modalAmount">-</span></p>
+                </div>
+                
+                <div class="qr-container">
+                    <h3>Scan QR Code to Pay</h3>
+                    <div id="qrCode"></div>
+                    <p class="upi-id">UPI ID: <strong>johnsbiju@fam</strong></p>
+                </div>
+                
+                <div class="upi-apps">
+                    <h3>Or Pay with UPI App</h3>
+                    <div class="app-buttons">
+                        <button onclick="payWithUPI('googlepay')" class="app-btn gpay">
+                            <i class="fab fa-google"></i> Google Pay
+                        </button>
+                        <button onclick="payWithUPI('phonepe')" class="app-btn phonepe">
+                            <i class="fas fa-phone-alt"></i> PhonePe
+                        </button>
+                        <button onclick="payWithUPI('paytm')" class="app-btn paytm">
+                            <i class="fas fa-rupee-sign"></i> Paytm
+                        </button>
+                        <button onclick="payWithUPI('bhim')" class="app-btn bhim">
+                            <i class="fas fa-building"></i> BHIM
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="payment-confirmation">
+                    <label>
+                        <input type="checkbox" id="paymentConfirmed"> I have completed the payment
+                    </label>
+                    <button id="confirmPaymentBtn" class="confirm-btn" onclick="confirmPayment()" disabled>
+                        Confirm & Submit Order
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content login-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-user-shield"></i> Staff Login</h2>
+                <span class="close-login">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="login-btn">Login</button>
+                </form>
+                <div class="demo-credentials">
+                    <p><i class="fas fa-info-circle"></i> Demo Credentials:</p>
+                    <p>Username: <strong>admin</strong> | Password: <strong>riftcloud2024</strong></p>
+                    <p>Username: <strong>staff</strong> | Password: <strong>staff123</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Staff Panel Modal -->
+    <div id="staffPanelModal" class="modal staff-panel">
+        <div class="modal-content staff-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-chart-line"></i> Staff Dashboard</h2>
+                <span class="close-staff">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="staff-stats">
+                    <div class="stat-box">
+                        <h3>Total Orders</h3>
+                        <p id="totalOrders">0</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Pending</h3>
+                        <p id="pendingOrders">0</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Completed</h3>
+                        <p id="completedOrders">0</p>
+                    </div>
+                </div>
+                
+                <div class="orders-list">
+                    <h3>Orders Management</h3>
+                    <div id="ordersTable"></div>
+                </div>
+                
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="crystal-bg.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
